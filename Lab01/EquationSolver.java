@@ -1,4 +1,5 @@
 // I JUST MADE SOME BS!!!!!!!!
+
 import javax.swing.JOptionPane;
 public class EquationSolver {
     public static void firstDegree(double a, double b) {
@@ -45,12 +46,12 @@ public class EquationSolver {
         }
     }
     public static void main(String[] args) {
-        String selection;
         // not that good at Java yet so this will make do
-        selection = JOptionPane.showInputDialog(null, "Please select your choice:\n1 for First Degree\n2 for First Degree Series\n3 for Second Degree", "Welcome!", JOptionPane.INFORMATION_MESSAGE);
+        String[] choices = {"First Degree", "First Degree Series", "Second Degree"};
+        int input = JOptionPane.showOptionDialog(null, "Please select your desired equation type.", "Welcome", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, choices, choices[0]);
         // thanks intellij for telling me that i can use a switch statement instead
-        switch(selection) {
-            case "1": {
+        switch(input) {
+            case 0: {
                 String astr, bstr;
                 astr = JOptionPane.showInputDialog(null, "Enter the first number: ");
                 bstr = JOptionPane.showInputDialog(null, "Enter the second number: ");
@@ -59,7 +60,7 @@ public class EquationSolver {
                 firstDegree(a, b);
                 break;
             }
-            case "2": {
+            case 1: {
                 String a1str, b1str, a2str, b2str, c1str, c2str;
                 a1str = JOptionPane.showInputDialog(null, "Enter a1: ");
                 b1str = JOptionPane.showInputDialog(null, "Enter b1: ");
@@ -76,7 +77,7 @@ public class EquationSolver {
                 firstDegSeries(a1, b1, a2, b2, c1, c2);
                 break;
             }
-            case "3": {
+            case 2: {
                 String astr, bstr, cstr;
                 astr = JOptionPane.showInputDialog(null, "Enter a: ");
                 bstr = JOptionPane.showInputDialog(null, "Enter b: ");
