@@ -1,0 +1,5 @@
+Câu hỏi: If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+
+Không. Mặc dù Java hoàn toàn cho phép chèn nhiều phương thức cùng tên lên nhau, gọi là Method Overloading, nếu hai phương thức có cùng tham số có cùng một kiểu dữ liệu (như String title và String category), Java sẽ không biết String mình nhập vào là title hay category, từ đó Java sẽ báo lỗi là duplicate (nhân đôi).
+
+Để giải quyết, ta phải làm cho hai phương thức đó khác nhau bằng cách thêm một tham số khác nữa vào 1 trong 2 phương thức trên.
