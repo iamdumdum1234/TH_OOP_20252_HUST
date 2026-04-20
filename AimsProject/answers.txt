@@ -1,0 +1,12 @@
+Question: Is JAVA a Pass by Value or a Pass by Reference programming language?
+
+Java là một ngôn ngữ Pass-by-Value (truyền giá trị).
+
+- Subquestion 1: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+Bởi vì khi ta dùng hàm swap như vậy, các giá trị sẽ được truyền cho các đối tượng o1 và o2. 
+Sau khi o1 và o2 được tráo đổi cho nhau, các đối tượng đó sẽ lập tức được hủy bỏ, và không được truyền lại cho jungleDVD và cinderellaDVD.
+
+- Subquestion 2: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+Bởi vì ta đã dùng các hàm getter và setter, vì vậy đã trực tiếp ảnh hưởng lên các đối tượng đó, thay vì truyền giá trị như hàm swap ở trên.
+
+Để làm hàm swap hoạt động đúng, ta sẽ phải dùng hàm getter và setter. Em đã làm được trong lớp TestPassingParameter. 
