@@ -1,7 +1,7 @@
 package hust.soict.hedspi.aims.Aims;
 
 import hust.soict.hedspi.aims.cart.Cart.Cart;
-import hust.soict.hedspi.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 
 public class Aims {
     public static void main (String[] args) {
