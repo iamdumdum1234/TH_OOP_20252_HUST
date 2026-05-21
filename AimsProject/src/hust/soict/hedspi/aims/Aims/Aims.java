@@ -5,7 +5,8 @@ import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 
 public class Aims {
     public static void main (String[] args) {
-        Cart anOrder = new Cart();
+        // Commented out until fixed
+        /* Cart anOrder = new Cart();
 
         // Sample data from lab assignment
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
@@ -26,5 +27,7 @@ public class Aims {
         anOrder.addDigitalVideoDisc(notInCart, alsoNotInCart);
 
         System.out.println("Total Cost is: " + String.format("%.2f", anOrder.totalCost()));
+        anOrder.printCart();
+         */
     }
 }

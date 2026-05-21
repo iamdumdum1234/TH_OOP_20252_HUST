@@ -6,13 +6,14 @@ import java.util.List;
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
 
-    public Book(int id, String title, String category, float cost, List<String> authors) {
-        super();
-        this.setId(id);
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-        this.authors = authors;
+    public Book(String title, String category, float cost, List<String> authors) {
+        super(title, category, cost);
+        if (authors == null) {
+            this.authors = new ArrayList<>();
+        }
+        else {
+            this.authors = new ArrayList<>(authors);
+        }
     }
 
     public void addAuthor(String author) {
@@ -31,5 +32,19 @@ public class Book extends Media {
         else {
             System.out.println("Author does not exist!");
         }
+    }
+
+    public List<String> getAuthors() {
+        return authors;
+    }
+
+    @Override
+    public String toString() {
+        return  "Item #" + this.getId() +
+                "\nType: Book" +
+                "\nTitle: " + this.getTitle() +
+                "\nCategory: " + this.getCategory() +
+                "\nCost: " + this.getCost() +
+                "\nAuthors: " + this.getAuthors();
     }
 }

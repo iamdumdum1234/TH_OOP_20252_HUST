@@ -2,20 +2,24 @@ package hust.soict.hedspi.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;
-import hust.soict.hedspi.aims.media.Track;
 
 public class CompactDisc extends Disc implements Playable {
-    private String artist;
-    private List<Track> tracks;
+    private final String artist;
+    private final List<Track> tracks;
 
     public String getArtist() {
         return artist;
     }
 
-    public CompactDisc(int id, String title, String category, float cost, int length, String director, String artist, List<Track> tracks) {
-        super(id, title, category, cost, length, director);
+    public CompactDisc(String title, String category, float cost, int length, String director, String artist, List<Track> tracks) {
+        super(title, category, cost, length, director);
         this.artist = artist;
-        this.tracks = tracks;
+        if (tracks == null) {
+            this.tracks = new ArrayList<>(); // literally nothing
+        }
+        else {
+            this.tracks = new ArrayList<>(tracks);
+        }
     }
 
     public void addTrack(Track track) {
@@ -57,5 +61,18 @@ public class CompactDisc extends Disc implements Playable {
         for (Track track : tracks) { // for each track of Track datatype in tracks arraylist (yes)
             track.play();
         }
+    }
+
+    // I didn't know that toString must be overridden until now
+    @Override
+    public String toString() {
+        return "Item #" + this.getId() +
+                "\nType: Compact Disc" +
+                "\nCategory: " + this.getCategory() +
+                "\nTitle: " + this.getTitle() +
+                "\nArtist: " + this.getArtist() +
+                "\nLength: " + this.getLength() +
+                "\nDirector: " + this.getDirector() +
+                "\nCost: " + this.getCost();
     }
 }
